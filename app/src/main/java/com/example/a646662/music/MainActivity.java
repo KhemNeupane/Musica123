@@ -18,22 +18,22 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_search:
-                    mTextMessage.setText("search");
+                    mTextMessage.setText(R.string.title_search);
                     return true;
                 case R.id.navigation_play:
-                    mTextMessage.setText("play");
+                    mTextMessage.setText(R.string.title_download);
                     return true;
                 case R.id.navigation_playlist:
-                    mTextMessage.setText("playlist");
+                    mTextMessage.setText(R.string.title_play);
                     return true;
                 case R.id.navigation_history:
-                    mTextMessage.setText("history");
+                    mTextMessage.setText(R.string.title_playlist);
                     return true;
                 case R.id.navigation_download:
-                    mTextMessage.setText("download");
+                    mTextMessage.setText(R.string.title_history);
                     return true;
             }
-            return false;
+            return true;
         }
     };
 
@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        mTextMessage = findViewById(R.id.message);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
